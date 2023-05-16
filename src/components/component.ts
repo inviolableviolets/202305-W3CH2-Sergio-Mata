@@ -1,5 +1,6 @@
+/* eslint-disable no-undef */
 export abstract class Component {
-  selector: string;
+  selector!: string;
   template!: string;
   element!: Element;
   constructor(selector: string) {
