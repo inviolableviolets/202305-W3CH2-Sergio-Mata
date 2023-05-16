@@ -6,7 +6,7 @@ export abstract class Component {
     this.selector = selector;
   }
 
-  render(position: InsertPosition) {
+  render(position: InsertPosition = 'beforeend') {
     const element = document.querySelector(this.selector);
     if (!element) throw new Error('Invalid selector.');
     this.element = element;
