@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
+import { allCharacters } from '../data/charactersList';
+import { Component } from './component';
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GoT</title>
-  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  <script src="./src/main.ts" defer type="module"></script>
-</head>
+export class Card extends Component {
+  constructor(selector: string) {
+    super(selector);
+    this.template = this.createTemplate();
+    this.render();
+  }
 
-<body>
-  <div class=" app container">
-    <ul class="characters-list row list-unstyled">
-      <li class="character col">
+  createTemplate() {
+    return `      <li class="character col">
         <div class="card character__card">
           <img src="/images/joffrey.jpg" alt="Joffrey Baratheon" class="character__picture card-img-top" />
           <div class="card-body">
@@ -43,14 +36,6 @@
           </div>
           <i class="emoji">👑</i>
         </div>
-      </li>
-      <div class="comunications">
-        <p class="comunications__text display-1">Una frase que dice alguien</p>
-        <img class="comunications__picture" src="/public/no-one.jpg" alt="Nombre y familia del que habla" />
-      </div>
-    </ul>
-  </div>
-
-</body>
-
-</html>
+      </li>`;
+  }
+}
